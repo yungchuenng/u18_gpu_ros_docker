@@ -47,7 +47,7 @@ RUN apt-get -y -f install && \
     rm -rf /var/lib/apt/lists/
 
 # Copy bashrc
-COPY docker/config/bashrc /root/.bashrc
+COPY config/bashrc /root/.bashrc
 
 # install python3.7
 # RUN /bin/bash -c 'mkdir /root/AltPythonVersions && cd /root/AltPythonVersions && \
@@ -70,7 +70,7 @@ COPY docker/config/bashrc /root/.bashrc
 # RUN /bin/bash -c 'echo -e "source /root/venv/py3.7/bin/activate" >> /root/.bashrc && source /root/.bashrc'
 
 # setup entrypoint
-COPY docker/config/ros_entrypoint_$ROS_DISTRO.sh /ros_entrypoint.sh 
+COPY config/ros_entrypoint_$ROS_DISTRO.sh /ros_entrypoint.sh 
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
 SHELL ["/bin/bash", "-c"]

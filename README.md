@@ -10,17 +10,17 @@ This custom image installs:
 - sublime text
 - terminator
 
-Build command for nvidia gpu:
+Build command for nvidia gpu (within the docker folder):
 
     docker build -t u18_gpu_ros_melodic:latest \
         --build-arg UID="$(id -u)" \
         --build-arg GID="$(id -g)" \
-        -f docker/Dockerfile-default-gpu_melodic . 
+        -f Dockerfile-default-gpu_melodic . 
 
 Build command for integrated graphics:
 
     docker build -t u18_ros_melodic:latest \
-        -f docker/Dockerfile-default-melodic .
+        -f Dockerfile-default-melodic .
 
 Note: 
 
